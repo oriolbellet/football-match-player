@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: match-player-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: match-player
+  template:
+    metadata:
+      labels:
+        component: match-player
+    spec:
+      containers:
+        - name: match-player
+          image: oriolbellet/match-player
+          env:
+            - name: SPRING_RABBITMQ_HOST
+              value: rabbitmq-cluster-ip-service

@@ -1,0 +1,21 @@
+version: '3'
+services:
+ match-player:
+  build: .
+  environment:
+    SPRING_RABBITMQ_HOST: rabbitmq
+  depends_on:
+    - rabbitmq
+ football-manager:
+  image: oriolbellet/football:latest
+  ports:
+    - "8080:8080"
+  environment:
+    SPRING_RABBITMQ_HOST: rabbitmq
+  depends_on:
+    - rabbitmq
+ rabbitmq:
+  image: rabbitmq:management
+  ports:
+    - "5672:5672"
+    - "15672:15672"

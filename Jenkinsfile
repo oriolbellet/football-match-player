@@ -4,9 +4,9 @@ pipeline {
         REGISTRY = "oriolbellet/match-player"
         REGISTRY_CREDENTIAL = 'dockerhub'
         DOCKER_IMAGE = ''
-        PROJECT_ID = 'king-oriolbellet-sandbox'
-        CLUSTER_NAME = 'multi-cluster'
-        LOCATION = 'us-central1-c'
+        PROJECT_ID = 'football-299420'
+        CLUSTER_NAME = 'football-cluster'
+        LOCATION = 'europe-west1-b'
         CREDENTIALS_ID = 'football'
         GIT_SHA = sh(returnStdout: true, script: 'git rev-parse HEAD').trim().take(6)
     }

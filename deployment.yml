@@ -17,4 +17,8 @@ spec:
           image: oriolbellet/match-player
           env:
             - name: SPRING_RABBITMQ_HOST
-              value: rabbitmq-cluster-ip-service
+              value: rabbitmq
+            - name: SPRING_RABBITMQ_USERNAME
+              value: user
+            - name: SPRING_RABBITMQ_PASSWORD
+              value: rabbitmq
